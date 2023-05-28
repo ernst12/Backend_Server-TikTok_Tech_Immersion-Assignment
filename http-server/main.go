@@ -5,9 +5,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/TikTokTechImmersion/assignment_demo_2023/http-server/kitex_gen/rpc"
-	"github.com/TikTokTechImmersion/assignment_demo_2023/http-server/kitex_gen/rpc/imservice"
-	"github.com/TikTokTechImmersion/assignment_demo_2023/http-server/proto_gen/api"
+	"github.com/ernst12/Backend_Server-TikTok_Tech_Immersion-Assignment/http-server/kitex_gen/rpc"
+	"github.com/ernst12/Backend_Server-TikTok_Tech_Immersion-Assignment/http-server/kitex_gen/rpc/imservice"
+	"github.com/ernst12/Backend_Server-TikTok_Tech_Immersion-Assignment/http-server/proto_gen/api"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/common/utils"

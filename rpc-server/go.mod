@@ -1,4 +1,4 @@
-module github.com/TikTokTechImmersion/assignment_demo_2023/rpc-server
+module github.com/ernst12/Backend_Server-TikTok_Tech_Immersion-Assignment/rpc-server
 
 go 1.18
 
@@ -20,6 +20,7 @@ require (
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/go-systemd/v22 v22.3.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/go-redis/redis/v7 v7.4.1 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/pprof v0.0.0-20220608213341-c488b8fa1db3 // indirect

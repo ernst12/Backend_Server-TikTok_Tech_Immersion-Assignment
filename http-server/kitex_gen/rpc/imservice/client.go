@@ -4,7 +4,7 @@ package imservice
 
 import (
 	"context"
-	rpc "github.com/TikTokTechImmersion/assignment_demo_2023/http-server/kitex_gen/rpc"
+	rpc "github.com/ernst12/Backend_Server-TikTok_Tech_Immersion-Assignment/http-server/kitex_gen/rpc"
 	client "github.com/cloudwego/kitex/client"
 	callopt "github.com/cloudwego/kitex/client/callopt"
 )
