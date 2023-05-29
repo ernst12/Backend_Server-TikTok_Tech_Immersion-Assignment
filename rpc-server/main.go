@@ -10,9 +10,11 @@ import (
 	etcd "github.com/kitex-contrib/registry-etcd"
 )
 
+var DB *database.Database
+
 func main() {
-	_, redisErr := database.Factory("redis")
-	//redisDb, redisErr := database.Factory("redis")
+	db, redisErr := database.Factory("redis")
+	DB = &db
 	if redisErr != nil {
 		panic(redisErr)
 	}
