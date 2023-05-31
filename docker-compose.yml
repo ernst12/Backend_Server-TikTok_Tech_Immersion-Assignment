@@ -2,6 +2,7 @@ version: '3.9'
 services:
   rpc-server:
     build: rpc-server
+    #privileged: true # to debug
     ports:
       - "8888:8888"
     environment:
@@ -12,6 +13,7 @@ services:
       - redis-client
   http-server:
     build: http-server
+    #privileged: true # to debug
     ports:
       - "8080:8080"
     environment:
