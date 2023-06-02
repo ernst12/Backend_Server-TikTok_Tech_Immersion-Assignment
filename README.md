@@ -1,3 +1,6 @@
+# JMeter
+To use `HTTP Request.jmx`, install JMeter. For MacOS, `brew install jmeter`
+
 # assignment_demo_2023
 
 ![Tests](https://github.com/TikTokTechImmersion/assignment_demo_2023/actions/workflows/test.yml/badge.svg)
