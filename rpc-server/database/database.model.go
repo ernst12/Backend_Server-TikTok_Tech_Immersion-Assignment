@@ -9,11 +9,8 @@ type Database interface {
 	Delete(key string) (error)
 }
 
-func Factory(databaseName string) (Database, error) {
-	switch databaseName {
-	case "redis":
-		return createRedisDatabase()
-	default:
-		return nil, &NotImplementedDatabaseError{databaseName}
-	}
+type Message struct {
+    Sender    string  `json:"sender"`
+    Message   string  `json:"message"`
+    Timestamp int64   `json:"timestamp"`
 }
