@@ -1,8 +1,9 @@
 # TikTok Tech Immersion Assignment 2023
 
-[Assignment instruction](https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle)
+[Assignment instruction](https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle): Design and implement a backend Instant Messaging system
 
-- Design and implement a backend Instant Messaging system
+![Architecture](./res/architecture.png)
+Reference: https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle
 
 # Tools used
 
