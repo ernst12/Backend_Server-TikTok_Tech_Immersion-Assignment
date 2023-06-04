@@ -14,17 +14,17 @@ import (
 )
 
 var (
-    rdb = &database.RedisClient{} // make the RedisClient with global visibility in the 'main' scope
+	rdb = &database.RedisClient{} // make the RedisClient with global visibility in the 'main' scope
 )
 
 func main() {
 	//ctx := context.Background() // https://www.digitalocean.com/community/tutorials/how-to-use-contexts-in-go
-	
+
 	err := rdb.InitClient("redis:6379", "")
-    if err != nil {
-       errMsg := fmt.Sprintf("failed to init Redis client, err: %v", err)
-       log.Fatal(errMsg)
-    }
+	if err != nil {
+		errMsg := fmt.Sprintf("failed to init Redis client, err: %v", err)
+		log.Fatal(errMsg)
+	}
 
 	r, err := etcd.NewEtcdRegistry([]string{"etcd:2379"}) // r should not be reused.
 	if err != nil {
