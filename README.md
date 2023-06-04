@@ -8,6 +8,7 @@
 
 - [Golang](https://go.dev/) programming language
 - [Kitex](https://www.cloudwego.io/docs/kitex/getting-started/)
+- [Hertx](https://www.cloudwego.io/docs/hertz/getting-started/): Protobuf protocol
 - [Redis](https://redis.io/)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) and Kubernetes
 - Github Actions: to automate the testing
@@ -15,7 +16,29 @@
 
 # JMeter
 
-To use `HTTP Request.jmx`, install JMeter. For MacOS, `brew install jmeter`
+To use `HTTP Request.jmx` file, install JMeter. For MacOS, `brew install jmeter`
+
+# Kitex
+- `kitex_gen` folder includes codes generated from `idl_rpc.thrift`, which generates RPC client code to be used in both HTTP Server and RPC Server
+- If you modify the definitions to `idl_rpc.thrift`, remember to re-generate the codes
+- Install thrift compiler and Kitex:
+```bash
+go install github.com/cloudwego/thriftgo
+go install github.com/cloudwego/kitex/tool/cmd/kitex@latest
+```
+- Generate the code for both http-server and rpc-server
+```bash
+cd ./rpc-server
+kitex -module "github.com/TikTokTechImmersion/assignment_demo_2023/rpc-server" -service imservice ../idl_rpc.thrift
+cp -r ./kitex_gen ../http-server # copy kitex_gen to http-server
+```
+
+# Hertx
+
+- If you want to modify the API definitions, update `idl_http.proto` file and re-generate the code
+- Install Protobuf: `brew install protobuf`
+- Install protoc-gen-go plugin to generate idl code: `go install github.com/golang/protobuf/protoc-gen-go@latest`
+- Generate new API definitions: `protoc --go_out=./http-server/proto_gen/api --go_opt=paths=source_relative ./idl_http.proto`
 
 # Setup
 
@@ -148,3 +171,7 @@ Sample response data:
   "next_cursor": 2
 }
 ```
+
+# Reference
+- https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle
+- https://o386706e92.larksuite.com/docx/QE9qdhCmsoiieAx6gWEuRxvWsRc
