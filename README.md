@@ -7,7 +7,7 @@
 # Tools used
 
 - [Golang](https://go.dev/) programming language
-- Kitex
+- [Kitex](https://www.cloudwego.io/docs/kitex/getting-started/)
 - [Redis](https://redis.io/)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) and Kubernetes
 - Github Actions: to automate the testing
