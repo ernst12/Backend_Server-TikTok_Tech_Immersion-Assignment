@@ -2,6 +2,10 @@
 
 [Assignment instruction](https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle): Design and implement a backend Instant Messaging system
 
+Features:
+- Send messages
+- Receive messages
+
 ![Architecture](./res/architecture.png)
 Reference: https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle
 
@@ -10,7 +14,7 @@ Reference: https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle
 - [Golang](https://go.dev/) programming language
 - [Kitex](https://www.cloudwego.io/docs/kitex/getting-started/)
 - [Hertx](https://www.cloudwego.io/docs/hertz/getting-started/): Protobuf protocol
-- [Redis](https://redis.io/)
+- [Redis](https://redis.io/): database to store messages
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) and Kubernetes
 - Github Actions: to automate the testing
 - [Postman](https://www.postman.com/downloads/): To test the api
@@ -21,25 +25,23 @@ To use `HTTP Request.jmx` file, install JMeter. For MacOS, `brew install jmeter`
 
 # Kitex
 - `kitex_gen` folder includes codes generated from `idl_rpc.thrift`, which generates RPC client code to be used in both HTTP Server and RPC Server
-- If you modify the definitions to `idl_rpc.thrift`, remember to re-generate the codes
-- Install thrift compiler and Kitex:
-```bash
-go install github.com/cloudwego/thriftgo
-go install github.com/cloudwego/kitex/tool/cmd/kitex@latest
-```
+- Remember to regenerate the codes, if you modify the definitions to `idl_rpc.thrift` file
+- Install thrift compiler: `go install github.com/cloudwego/thriftgo`
+- Install Kitex: `go install github.com/cloudwego/kitex/tool/cmd/kitex@latest`
 - Generate the code for both http-server and rpc-server
 ```bash
 cd ./rpc-server
-kitex -module "github.com/TikTokTechImmersion/assignment_demo_2023/rpc-server" -service imservice ../idl_rpc.thrift
+kitex -module "github.com/ernst12/Backend_Server-TikTok_Tech_Immersion-Assignment/rpc-server" -service imservice ../idl_rpc.thrift
 cp -r ./kitex_gen ../http-server # copy kitex_gen to http-server
 ```
 
 # Hertx
 
-- If you want to modify the API definitions, update `idl_http.proto` file and re-generate the code
-- Install Protobuf: `brew install protobuf`
-- Install protoc-gen-go plugin to generate idl code: `go install github.com/golang/protobuf/protoc-gen-go@latest`
-- Generate new API definitions: `protoc --go_out=./http-server/proto_gen/api --go_opt=paths=source_relative ./idl_http.proto`
+- Remember to update `idl_http.proto` file and regenerate the code, if you modify the API definitions
+- To regenerate the code:
+1. Install Protobuf: `brew install protobuf`
+2. Install protoc-gen-go plugin to generate idl code: `go install github.com/golang/protobuf/protoc-gen-go@latest`
+3. Generate new API definitions: `protoc --go_out=./http-server/proto_gen/api --go_opt=paths=source_relative ./idl_http.proto`
 
 # Setup
 
@@ -105,11 +107,11 @@ Expected response:
 POST `/api/send`
 
 Body parameters:
-| Param | Type | Description |
-| --- | --- | --- |
-| chat | string | Chat ID. <br/>Format: `<member1>:<member2>` |
-| text | string | Text message to send |
-| sender | string | Sender name |
+| Param  | Type   | Description                                 |
+| ------ | ------ | ------------------------------------------- |
+| chat   | string | Chat ID. <br/>Format: `<member1>:<member2>` |
+| text   | string | Text message to send                        |
+| sender | string | Sender name                                 |
 
 Sample Request body:
 
@@ -128,11 +130,11 @@ Expected response: Empty
 GET `/api/pull`
 
 Body parameters: (send in the body)
-| Param | Type | Description |
-| --- | --- | --- |
-| chat | string | Chat ID. <br/>Format: `<member1>:<member2>` |
-| cursor | int | Starting position of the messages (inclusively). Default: 0 |
-| limit | int | Maximum number of messages returned per request. Default: 10 |
+| Param   | Type    | Description                                                     |
+| ------- | ------- | --------------------------------------------------------------- |
+| chat    | string  | Chat ID. <br/>Format: `<member1>:<member2>`                     |
+| cursor  | int     | Starting position of the messages (inclusively). Default: 0     |
+| limit   | int     | Maximum number of messages returned per request. Default: 10    |
 | reverse | boolean | If false, the results will be sorted in ascending order by time |
 
 Sample Request body:
@@ -148,11 +150,11 @@ Sample Request body:
 
 Response Body Parameter:
 Body parameters: (send in the body)
-| Param | Type | Description |
-| --- | --- | --- |
-| messages | array | List of messages |
-| has_more | boolean | If true, can use next_cursor to pull the next page of messages |
-| next_cursor | int | Starting position of next page, inclusively |
+| Param       | Type    | Description                                                    |
+| ----------- | ------- | -------------------------------------------------------------- |
+| messages    | array   | List of messages                                               |
+| has_more    | boolean | If true, can use next_cursor to pull the next page of messages |
+| next_cursor | int     | Starting position of next page, inclusively                    |
 
 Sample response data:
 
