@@ -45,7 +45,11 @@ cp -r ./kitex_gen ../http-server # copy kitex_gen to http-server
 
 - You can either run the project using docker compose or kubernetes
 - You may install [Docker Desktop](https://www.docker.com/products/docker-desktop/) and enable Kubernetes in the Docker Desktop
-- Clone this repo
+- Clone this project to your computer:
+```bash
+git clone https://github.com/ernst12/Backend_Server-TikTok_Tech_Immersion-Assignment.git
+cd Backend_Server-TikTok_Tech_Immersion-Assignment
+```
 
 ## Using docker compose to run the project
 
