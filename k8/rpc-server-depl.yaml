@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: rpc-server-depl
 spec:
-  replicas: 2
+  replicas: 10 #2
   selector:
     matchLabels:
       app: rpc-server
