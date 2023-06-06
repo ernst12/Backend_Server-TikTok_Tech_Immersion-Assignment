@@ -76,6 +76,13 @@ run the command `docker compose up --build` in the terminal
 
 run the command `kubectl apply -f ./k8` in the terminal
 
+If you want to delete the services and deployments created (after running the above command), you can run the following commands:
+```bash
+kubectl delete deployment http-server-depl redis-depl rpc-server-depl etcd-depl
+
+kubectl delete services http-server redis rpc-server etcd
+```
+
 ### Change the number of pods
 
 - You may change the number of pods running by changing the file in `k8` folder.
