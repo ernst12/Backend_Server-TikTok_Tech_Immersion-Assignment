@@ -1,4 +1,4 @@
-# TikTok Tech Immersion Assignment 2023
+# TikTok Tech Immersion Assignment 2023 <!-- omit in toc -->
 
 [Assignment instruction](https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle): Design and implement a backend Instant Messaging system
 
@@ -8,6 +8,24 @@ Features:
 
 ![Architecture](./res/architecture.svg)
 Reference: https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle
+
+# Table of Contents <!-- omit in toc -->
+- [Tools used](#tools-used)
+- [JMeter](#jmeter)
+- [Kitex](#kitex)
+- [Hertx](#hertx)
+- [Setup](#setup)
+  - [Using docker compose to run the project](#using-docker-compose-to-run-the-project)
+  - [Using Kubernetes](#using-kubernetes)
+    - [1. Build Docker Image](#1-build-docker-image)
+    - [2. Push to Docker Hub](#2-push-to-docker-hub)
+    - [3. Run using Kubernetes](#3-run-using-kubernetes)
+    - [Change the number of pods](#change-the-number-of-pods)
+- [API Documentations](#api-documentations)
+  - [Ping](#ping)
+  - [Send Message](#send-message)
+  - [Pull/Retrieve messages](#pullretrieve-messages)
+- [Reference](#reference)
 
 # Tools used
 
