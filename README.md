@@ -6,7 +6,7 @@ Features:
 - Send messages
 - Receive messages
 
-![Architecture](./res/architecture.png)
+![Architecture](./res/architecture.svg)
 Reference: https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle
 
 # Tools used
