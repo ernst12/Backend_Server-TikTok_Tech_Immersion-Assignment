@@ -13,6 +13,7 @@ Reference: https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle
 
 # Table of Contents <!-- omit in toc -->
 - [Tools used](#tools-used)
+- [Scalability](#scalability)
 - [JMeter](#jmeter)
 - [Kitex](#kitex)
 - [Hertx](#hertx)
@@ -39,9 +40,16 @@ Reference: https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle
 - Github Actions: to automate the testing
 - [Postman](https://www.postman.com/downloads/): To test the api
 
+# Scalability
+
+- Used Kubernetes
+- The config YAML files are in `k8` folder
+
 # JMeter
 
-To use `HTTP Request.jmx` file, install JMeter. For MacOS, `brew install jmeter`
+- JMeter, an open-source load testing tool
+- To test the scalability and performance of the applications
+- To use `HTTP Request.jmx` file, install JMeter. For MacOS, `brew install jmeter`
 
 # Kitex
 - `kitex_gen` folder includes codes generated from `idl_rpc.thrift`, which generates RPC client code to be used in both HTTP Server and RPC Server
