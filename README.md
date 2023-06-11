@@ -11,6 +11,9 @@ Features:
 ![Architecture](./res/architecture.svg)
 Reference: https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle
 
+- `http-server` handles incoming HTTP requests from clients
+- `rpc-server` provides RPC-based services to handle those requests
+
 # Table of Contents <!-- omit in toc -->
 - [Tools used](#tools-used)
 - [Scalability](#scalability)
