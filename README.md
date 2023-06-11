@@ -164,6 +164,8 @@ Expected response: Empty
 
 GET `/api/pull`
 
+**Note**: It's not common to send a data body in a GET request, but the demo given to us is in this way and the instruction states that we shouldn't modify the http-server code
+
 Body parameters: (send in the body)
 | Param   | Type    | Description                                                     |
 | ------- | ------- | --------------------------------------------------------------- |
