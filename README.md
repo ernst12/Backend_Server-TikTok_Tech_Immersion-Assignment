@@ -18,8 +18,8 @@ Reference: https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle
 - [Kitex](#kitex)
 - [Hertx](#hertx)
 - [Setup](#setup)
-  - [Using docker compose to run the project](#using-docker-compose-to-run-the-project)
-  - [Using Kubernetes](#using-kubernetes)
+  - [Option 1: Using docker compose to run the project](#option-1-using-docker-compose-to-run-the-project)
+  - [Option 2: Using Kubernetes](#option-2-using-kubernetes)
     - [1. Build Docker Image](#1-build-docker-image)
     - [2. Push to Docker Hub](#2-push-to-docker-hub)
     - [3. Run using Kubernetes](#3-run-using-kubernetes)
@@ -81,11 +81,11 @@ git clone https://github.com/ernst12/Backend_Server-TikTok_Tech_Immersion-Assign
 cd Backend_Server-TikTok_Tech_Immersion-Assignment
 ```
 
-## Using docker compose to run the project
+## Option 1: Using docker compose to run the project
 
 run the command `docker compose up --build` in the terminal
 
-## Using Kubernetes
+## Option 2: Using Kubernetes
 
 ### 1. Build Docker Image
 
