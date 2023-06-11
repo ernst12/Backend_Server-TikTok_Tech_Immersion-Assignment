@@ -1,5 +1,7 @@
 # TikTok Tech Immersion Assignment 2023 <!-- omit in toc -->
 
+![Tests](https://github.com/ernst12/Backend_Server-TikTok_Tech_Immersion-Assignment/actions/workflows/test.yml/badge.svg)
+
 [Assignment instruction](https://bytedance.sg.feishu.cn/docx/P9kQdDkh5oqG37xVm5slN1Mrgle): Design and implement a backend Instant Messaging system
 
 Features:
